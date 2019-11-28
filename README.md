@@ -69,10 +69,7 @@ docker-compose down -v
 - **WEBSERVER_PORT** (`80`) - If you already has the port 80 in use, you can change it (for example if you have Apache)
 - **WEBSERVER_PORT_SSL** (`443`) - If you already has the port 443 in use, you can change it (for example if you have Apache)
 - **DOCUMENT_ROOT** (`./www`) - It is a document root for Apache server. All your sites will go here and will be synced automatically.
-- **VHOSTS_DIR** (`./config/vhosts`) - You can place your virtual hosts conf files here.
-
-> Make sure you add an entry to your system's `hosts` file for each virtual host.
-
+- **VHOSTS_DIR** (`./config/vhosts`) - You can place your virtual hosts conf files here. Make sure you add an entry to your system's `hosts` file for each virtual host.
 - **APACHE_LOG_DIR**(`./logs/apache2`) - Apache logs.
 - **PHP_INI**(`./config/php/php.ini`) - PHP configuration.
 - **DATABASE** (`mysql`) - If you want to use mariadb instead of `mysql` use `mariadb`
