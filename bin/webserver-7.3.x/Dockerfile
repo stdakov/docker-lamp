@@ -15,9 +15,10 @@ RUN apt-get -y update --fix-missing && \
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
     apt-get -y --no-install-recommends install nano wget dialog libsqlite3-dev libsqlite3-0 && \
-    apt-get -y --no-install-recommends install mysql-client zlib1g-dev libzip-dev libicu-dev && \
+    apt-get -y --no-install-recommends install mysql-client zlib1g-dev libzip-dev ffmpeg libicu-dev && \
     apt-get -y --no-install-recommends install --fix-missing apt-utils build-essential git curl && \ 
-    apt-get -y --no-install-recommends install --fix-missing libcurl3 libcurl3-dev zip openssl && \
+    apt-get -y --no-install-recommends install --fix-missing libcurl3 libcurl3-dev zip unzip openssl && \
+    apt-get -y --no-install-recommends install locales && locale-gen C.UTF-8 && update-locale LANG=C.UTF-8 && \
     rm -rf /var/lib/apt/lists/* && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -40,6 +41,7 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install zip && \
     docker-php-ext-install -j$(nproc) intl && \
     docker-php-ext-install mbstring && \
+    docker-php-ext-install exif && \
     docker-php-ext-install gettext
 
 # Install Freetype 
@@ -50,10 +52,18 @@ RUN apt-get -y update && \
     docker-php-ext-install -j$(nproc) gd
 
 # Enable apache modules
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers ssl remoteip
+
+WORKDIR /var/www
+
+# Give shell to www-data
+RUN usermod --shell /bin/bash www-data
 
 #RUN chown -R www-data:www-data /var/www
 #RUN chmod 755 /var/www
 
 # Cleanup
-RUN rm -rf /usr/src/*
+RUN apt-get purge --auto-remove -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /root/.composer/cache && \
+    docker-php-source delete
