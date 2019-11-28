@@ -71,18 +71,18 @@ docker-compose down -v
 - **WEBSERVER_PORT_SSL** (`443`) - If you already has the port 443 in use, you can change it (for example if you have Apache)
 - **DOCUMENT_ROOT** (`./www`) - It is a document root for Apache server. All your sites will go here and will be synced automatically.
 - **VHOSTS_DIR** (`./config/vhosts`) - You can place your virtual hosts conf files here. Make sure you add an entry to your system's `hosts` file for each virtual host.
-- **APACHE_LOG_DIR**(`./logs/apache2`) - Apache logs.
-- **PHP_INI**(`./config/php/php.ini`) - PHP configuration.
+- **APACHE_LOG_DIR** (`./logs/apache2`) - Apache logs.
+- **PHP_INI** (`./config/php/php.ini`) - PHP configuration.
 - **DATABASE** (`mysql`) - If you want to use mariadb instead of `mysql` use `mariadb`
-- **MYSQL_DATA_DIR**(`./data/mysql`) - All your MySQL/MariaDB data files will be stored here.
+- **MYSQL_DATA_DIR** (`./data/mysql`) - All your MySQL/MariaDB data files will be stored here.
 - **MYSQL_LOG_DIR**(`./logs/mysql`) - This will be used to store MySQL/MariaDB logs.
 - **MYSQL_PORT**(`3306`) - If you already has the port 3306 in use, you can change it (for example if you have MySQL)
-- **MYSQL_ROOT_PASSWORD**(`password`) - MySQL root password.
-- **MYSQL_USER**(`docker`) - Default MySQL user
-- **MYSQL_PASSWORD**(`docker`) - Default MySQL user password
-- **MYSQL_DATABASE**(`docker`) - Default MySQL database
-- **PHPMYADMIN_PHP_INI**(`./config/phpmyadmin/phpmyadmin-misc.ini`) -
-- **REDIS_PORT**(`6379`) - Redis port. If you already use that port, you can change it.
+- **MYSQL_ROOT_PASSWORD** (`password`) - MySQL root password.
+- **MYSQL_USER** (`docker`) - Default MySQL user
+- **MYSQL_PASSWORD** (`docker`) - Default MySQL user password
+- **MYSQL_DATABASE** (`docker`) - Default MySQL database
+- **PHPMYADMIN_PHP_INI** (`./config/phpmyadmin/phpmyadmin-misc.ini`) -
+- **REDIS_PORT** (`6379`) - Redis port. If you already use that port, you can change it.
 
 #### Apache, PHP Modules
 
@@ -90,8 +90,9 @@ By default following modules are enabled.
 
 - rewrite
 - headers
+- ssl
+- remoteip
 
-The installed version of PHP is 7.3.x
 
 #### Extensions
 
@@ -108,7 +109,10 @@ By default following extensions are installed.
 - xml
 - xmlrpc
 - gd
-- composer
+- locales
+- ffmpeg
+- unzip
+- php-exif
 
 #### Using composer
 
