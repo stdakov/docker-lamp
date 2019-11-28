@@ -124,9 +124,9 @@ composer update
 
 ## phpMyAdmin
 
-http://localhost:8080/
-username: root
-password: password
+- http://localhost:8080/
+- username: `root`
+- password: `password`
 
 ## Redis
 
