@@ -115,7 +115,7 @@ To use composer login on the container using ssh:
 
 ```shell
 docker-compose exec webserver bash
-cd /var/www/{project-folder}
+cd {project-folder}
 composer update
 ```
 
