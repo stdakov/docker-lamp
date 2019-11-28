@@ -8,6 +8,7 @@ Containers:
 - Apache 2.4
 - MySQL 5.7 or MariaDB 10.3
 - phpMyAdmin
+- Redis
 
 ## Installation
 
