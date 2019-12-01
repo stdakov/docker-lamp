@@ -1,6 +1,6 @@
 # docker-lamp
 
-A ready to use docker-compose configuration with php, mysql, phpmyadmin, redis, apache2.
+A ready to use docker-compose configuration with php, mysql, phpmyadmin, redis, redis-commander, apache2.
 
 Containers:
 
@@ -9,6 +9,7 @@ Containers:
 - MySQL 5.7 or MariaDB 10.3
 - phpMyAdmin
 - Redis
+- Redis Commander
 
 ## Installation
 
@@ -136,3 +137,7 @@ composer update
 ## Redis
 
 It comes with Redis. It runs on default port `6379`.
+
+## Redis Commander
+
+- http://localhost:8082/

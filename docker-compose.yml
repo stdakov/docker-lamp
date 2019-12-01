@@ -52,3 +52,12 @@ services:
     image: redis:latest
     ports:
       - "${REDIS_PORT}:6379"
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:${REDIS_PORT}
+    ports:
+      - "${REDIS_COMMANDER_PORT}:8081"
