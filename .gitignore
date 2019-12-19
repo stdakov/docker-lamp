@@ -2,3 +2,8 @@
 /.vscode
 .DS_Store
 /nbproject
+
+www/*
+!www/phpinfo.php
+!www/index.php
+!www/assets/*
