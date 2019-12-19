@@ -7,3 +7,10 @@ www/*
 !www/phpinfo.php
 !www/index.php
 !www/assets/*
+
+data/*
+!data/mysql/.gitkeep
+
+logs/*
+!logs/apache2/.gitkeep
+!logs/mysql/.gitkeep
