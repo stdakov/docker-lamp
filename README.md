@@ -4,7 +4,7 @@ A ready to use docker-compose configuration with php, mysql, phpmyadmin, redis, 
 
 Containers:
 
-- PHP 7.3
+- PHP 7.4
 - Apache 2.4
 - MySQL 5.7 or MariaDB 10.3
 - phpMyAdmin
@@ -67,7 +67,7 @@ docker-compose down -v
 
 ## Configuration Variables (.env)
 
-- **WEBSERVER** (`webserver-7.3.x`) - The name of the php/apache container and the path to currect php container version.
+- **WEBSERVER** (`webserver-7.4.x`) - The name of the php/apache container and the path to currect php container version.
 - **WEBSERVER_PORT** (`80`) - If you already has the port 80 in use, you can change it (for example if you have Apache)
 - **WEBSERVER_PORT_SSL** (`443`) - If you already has the port 443 in use, you can change it (for example if you have Apache)
 - **DOCUMENT_ROOT** (`./www`) - It is a document root for Apache server. All your sites will go here and will be synced automatically.

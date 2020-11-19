@@ -3,8 +3,6 @@
 .DS_Store
 /nbproject
 
-www/*
-!www/website/*
 
 data/*
 !data/mysql/.gitkeep
