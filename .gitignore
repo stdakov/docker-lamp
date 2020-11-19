@@ -4,9 +4,7 @@
 /nbproject
 
 www/*
-!www/phpinfo.php
-!www/index.php
-!www/assets/*
+!www/website/*
 
 data/*
 !data/mysql/.gitkeep
