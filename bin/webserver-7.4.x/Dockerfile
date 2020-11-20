@@ -14,7 +14,7 @@ RUN apt-get -y update --fix-missing && \
 
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
-    apt-get -y --no-install-recommends install nano wget dialog libsqlite3-dev libsqlite3-0 && \
+    apt-get -y --no-install-recommends install npm nano wget dialog libsqlite3-dev libsqlite3-0 && \
     apt-get -y --no-install-recommends install mariadb-client zlib1g-dev libzip-dev ffmpeg libicu-dev && \
     apt-get -y --no-install-recommends install --fix-missing apt-utils build-essential git curl && \ 
     apt-get -y --no-install-recommends install --fix-missing pkg-config libonig-dev libcurl4 libcurl4-openssl-dev zip unzip openssl && \
