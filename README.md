@@ -36,7 +36,9 @@ docker-compose up -d --no-deps --build {service-name}
 ```shell
 docker-compose up -d --no-deps --build phpmyadmin
 ```
-
+```shell
+docker-compose up --build -d
+```
 #### Connect to container:
 
 ```shell
