@@ -32,10 +32,7 @@ RUN pecl install redis-4.0.1 && \
 
 # Other PHP7 Extensions
 
-RUN docker-php-ext-install pdo_mysql && \
-    docker-php-ext-install pdo_sqlite && \
-    docker-php-ext-install mysqli && \
-    docker-php-ext-install curl && \
+RUN docker-php-ext-install curl && \
     docker-php-ext-install tokenizer && \
     docker-php-ext-install json && \
     docker-php-ext-install zip && \
@@ -43,6 +40,10 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install exif && \
     docker-php-ext-install gettext
+
+RUN docker-php-ext-install mysqli
+RUN docker-php-ext-enable mysqli
+RUN docker-php-ext-install pdo pdo_mysql pdo_sqlite
 
 # Install Freetype 
 RUN apt-get -y update && \

@@ -7,6 +7,9 @@
 data/*
 !data/mysql/.gitkeep
 
+www/*
+!www/website/*
+
 logs/*
 !logs/apache2/.gitkeep
 !logs/mysql/.gitkeep
